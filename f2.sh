@@ -15,6 +15,8 @@ if [ -z "$i" -o -z "$o" ]; then
        exit 1
 fi
 
+$botmsg="${o} encode started"
+
 echo -e "\n"
 
 low() {

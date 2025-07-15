@@ -1,4 +1,7 @@
-mkdir tm && cd tm && wget https://raw.githubusercontent.com/RahifM/scripts/refs/heads/newffmpeg/tm2.sh && chmod +x tm2.sh && ./tm2.sh && transmission-remote --start-paused -a "https://github.com/zmzu/dump/releases/download/1.0/Bleach.Box.1-6.1080p.BluRay.HEVC.AAC2.0.x265-RB26DETT.torrent" && transmission-remote -t 1 -G all && transmission-remote -t 1 -g2 && transmission-remote -t 1 -f | grep Yes && transmission-remote -t 1 -s
+mkdir tm && cd tm &&
+	wget https://raw.githubusercontent.com/RahifM/scripts/refs/heads/newffmpeg/tm2.sh && chmod +x tm2.sh && ./tm2.sh &&
+	transmission-remote --start-paused -a "https://github.com/zmzu/dump/releases/download/1.0/Bleach.Box.1-6.1080p.BluRay.HEVC.AAC2.0.x265-RB26DETT.torrent" &&
+	transmission-remote -t 1 -G all && transmission-remote -t 1 -g2 && transmission-remote -t 1 -f | grep Yes && transmission-remote -t 1 -s
 
 export i=Bleach.E003.1080p.BluRay.HEVC.AAC2.0.x265-RB26DETT.mkv
 export o=Bleach.E003.mkv
