@@ -27,7 +27,7 @@ low() {
 up() {
 [ -f "github-release-2.0.0.2-ubuntu" ] && echo "gh rel already exists" || ( echo "gh rel not found" && wget https://github.com/tfausak/github-release/releases/download/2.0.0.2/github-release-2.0.0.2-ubuntu && chmod +x github-release-2.0.0.2-ubuntu )
 
-./gi* upload --token $GHSECRET --owner 'zmzu' --repo 'dump' --tag '1.0' --file ${o} --name ${o}
+./gi* upload --token $GHSECRET --owner 'realraf37' --repo 'bleach_encode_dump' --tag '1.0' --file ${o} --name ${o}
 }
 
 low
