@@ -7,7 +7,7 @@ export i=Bleach.E003.1080p.BluRay.HEVC.AAC2.0.x265-RB26DETT.mkv
 export o=Bleach.E003.mkv
 
 fmpg() {
-	cd Bl* && cd Bl* && wget https://raw.githubusercontent.com/realraf37/ffmpeg_encode_wf/refs/heads/exp/f2.sh && chmod +x f2.sh && ./f2.sh
+	cd Bl* && cd Bl* && pwd && du -hs * && wget https://raw.githubusercontent.com/realraf37/ffmpeg_encode_wf/refs/heads/exp/f2.sh && chmod +x f2.sh && ./f2.sh
 }
 
 while true ; do
@@ -16,6 +16,7 @@ while true ; do
 		transmission-remote -t 1 -S
 		ls && pwd
 		fmpg
+		pwd && du -hs *
 		break
 	fi
 	echo $(transmission-remote -t 1 -i | grep State)
