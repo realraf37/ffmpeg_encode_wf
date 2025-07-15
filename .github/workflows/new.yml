@@ -9,6 +9,11 @@ jobs:
   encode:
     runs-on: ubuntu-latest
 
+    env:
+      BOTAPI: ${{ secrets.BOTAPI }}
+      CHATID: ${{ secrets.CHATID }}
+      GHSECRET: ${{ secrets.GHSECRET }}
+
     steps:
       - uses: actions/checkout@v4
 

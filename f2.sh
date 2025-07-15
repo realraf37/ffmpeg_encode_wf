@@ -1,6 +1,6 @@
 #set -e
 
-export botmsg="curl -s -X POST "https://api.telegram.org/bot${botapi}/sendMessage" -d chat_id="${chatid}" -d "disable_web_page_preview=true" -d "parse_mode=html" -d text"
+export botmsg="curl -s -X POST "https://api.telegram.org/bot${BOTAPI}/sendMessage" -d chat_id="${CHATID}" -d "disable_web_page_preview=true" -d "parse_mode=html" -d text"
 
 sudo apt install ffmpeg -y
 
@@ -27,7 +27,7 @@ low() {
 up() {
 [ -f "github-release-2.0.0.2-ubuntu" ] && echo "gh rel already exists" || ( echo "gh rel not found" && wget https://github.com/tfausak/github-release/releases/download/2.0.0.2/github-release-2.0.0.2-ubuntu && chmod +x github-release-2.0.0.2-ubuntu )
 
-./gi* upload --token $ghsecret --owner 'zmzu' --repo 'dump' --tag '1.0' --file ${o} --name ${o}
+./gi* upload --token $GHSECRET --owner 'zmzu' --repo 'dump' --tag '1.0' --file ${o} --name ${o}
 }
 
 low
