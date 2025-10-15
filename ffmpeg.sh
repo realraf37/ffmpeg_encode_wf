@@ -8,6 +8,8 @@ export TG=$HOME/telegram.sh/telegram
 
 [ -f export.sh ] && . ./export.sh || ( echo "export.sh not found" && exit 1 )
 
+sudo apt install ffmpeg -y
+
 fmpgscrpt() {
 
 [ -d "$HOME/telegram.sh" ] || time git clone https://github.com/RahifM/telegram.sh $HOME/telegram.sh
