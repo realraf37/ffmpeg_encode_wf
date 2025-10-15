@@ -15,8 +15,9 @@ jobs:
       GHSECRET: ${{ secrets.GHSECRET }}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Clone
+        run: git clone --depth 1 https://github.com/realraf37/ffmpeg_encode_wf -b exp && cd ffmpeg_encode_wf
 
       - name: Trigger script
         run: |
-          bash f-new.sh
+          bash ffmpeg.sh
