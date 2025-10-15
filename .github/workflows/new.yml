@@ -15,9 +15,5 @@ jobs:
       GHSECRET: ${{ secrets.GHSECRET }}
 
     steps:
-      - name: Clone
-        run: git clone --depth 1 https://github.com/realraf37/ffmpeg_encode_wf -b exp && cd ffmpeg_encode_wf
-
-      - name: Trigger script
-        run: |
-          bash ffmpeg.sh
+      - name: Clone and trigger
+        run: git clone --depth 1 https://github.com/realraf37/ffmpeg_encode_wf -b exp && cd ffmpeg_encode_wf && bash ffmpeg.sh
