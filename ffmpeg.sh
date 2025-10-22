@@ -57,9 +57,7 @@ echo -e "\n"
 
 low() {
         [ -f ${o}*.txt ] && rm ${o}*.txt
-	time ffmpeg -i "${i}" -map 0 -c:v libx265 -preset slow -pix_fmt yuv420p10le -crf 28 -vf scale=1280:720 \
--x265-params "bframes=8:b-adapt=2:keyint=250:open-gop=1:vbv-maxrate=12000:vbv-bufsize=24000:aq-mode=3:aq-strength=1.0:deblock=0:0:sao=1:no-psnr=1:no-ssim=1:signhide=1:strong-intra-smoothing=1:subme=2:me=1:rdoq-level=1:ctu=64:min-cu-size=8:no-rect=1:no-amp=1:psy-rd=0:psy-rdoq=0" \
--c:a copy  -c:s copy "${o}" 2>&1 | tee ${o}-$(date +'%Y%m%d-%H%M').txt
+        time ffmpeg -i  "${i}" -s 1280x720 -c copy -map 0 -c:v libx265 -x265-params crf=28 -pix_fmt yuv420p -preset slow  "${o}" 2>&1 | tee ${o}-$(date +'%Y%m%d-%H%M').txt
 }
 
 up() {
