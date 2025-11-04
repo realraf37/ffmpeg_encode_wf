@@ -8,6 +8,7 @@ export TG=$HOME/telegram.sh/telegram
 
 [ -f export.sh ] && . ./export.sh || ( echo "export.sh not found" && exit 1 )
 
+sudo apt update
 sudo apt install ffmpeg -y
 
 fmpgscrpt() {
