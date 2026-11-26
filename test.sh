@@ -5,5 +5,5 @@ transmission-daemon
 transmission-remote -w $(pwd)
 echo "transmission setup done"
 transmission-remote --start-paused -a "${tl}"
-
+sudo sed -i 's|"rpc-authentication-required": true,|"rpc-authentication-required": false,|g' /etc/transmission-daemon/settings.json 
 sudo cat /etc/transmission-daemon/settings.json
