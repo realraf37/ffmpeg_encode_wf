@@ -4,4 +4,6 @@ transmission-daemon
 #transmission-remote -l
 transmission-remote -w $(pwd)
 echo "transmission setup done"
-transmission-remote --start-paused -a "${tl}" &&
+transmission-remote --start-paused -a "${tl}"
+
+cat /etc/transmission-daemon/settings.json
