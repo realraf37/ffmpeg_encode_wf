@@ -12,4 +12,8 @@ transmission-remote -l
 transmission-remote -w $(pwd)
 echo "transmission setup done"
 transmission-remote --start-paused -a "${tl}"
-
+transmission-remote -t 1 -G all &&
+echo "transmission-remote -t 1 -g${t}" &&
+transmission-remote -t 1 -g${t} &&
+transmission-remote -t 1 -f | grep Yes && transmission-remote -t 1 -s
+transmission-remote -t 1 -f | grep Yes > check.txt
