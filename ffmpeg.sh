@@ -32,9 +32,19 @@ tmsa() {
 tms() {
         ( sudo apt install transmission-cli transmission-daemon -y && transmission-daemon && transmission-remote -l && transmission-remote -w $(pwd) ) 2>&1 | tee tm.txt
 }
-        tms
+        #tms
+        #[ "$(grep success tm.txt)" == "" ] && tms && rm tm.txt
 
-        [ "$(grep success tm.txt)" == "" ] && tms && rm tm.txt
+sudo apt install transmission-cli transmission-daemon -y
+
+sudo /etc/init.d/transmission-daemon stop
+sudo sed -i 's|"rpc-authentication-required": true,|"rpc-authentication-required": false,|g' /etc/transmission-daemon/settings.json 
+sudo cat /etc/transmission-daemon/settings.json
+sudo /etc/init.d/transmission-daemon restart/start
+
+transmission-daemon
+transmission-remote -l
+transmission-remote -w $(pwd)
 
 	[ -d Bl* ] && rm -rf Bl*
 	transmission-remote --start-paused -a "${tl}" &&
