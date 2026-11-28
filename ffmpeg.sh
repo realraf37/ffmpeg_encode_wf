@@ -1,4 +1,4 @@
-set -e
+#set -e
 
 export TZ='Asia/Kolkata'
 
