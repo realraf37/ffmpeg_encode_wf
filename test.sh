@@ -2,10 +2,10 @@
 
 sudo apt install transmission-cli transmission-daemon -y
 
-/etc/init.d/transmission-daemon stop
+sudo /etc/init.d/transmission-daemon stop
 sudo sed -i 's|"rpc-authentication-required": true,|"rpc-authentication-required": false,|g' /etc/transmission-daemon/settings.json 
 sudo cat /etc/transmission-daemon/settings.json
-/etc/init.d/transmission-daemon restart/start
+sudo /etc/init.d/transmission-daemon restart/start
 
 transmission-daemon
 transmission-remote -l
