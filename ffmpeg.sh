@@ -43,7 +43,7 @@ tmsa() {
 	transmission-daemon
 	transmission-remote -l
 	transmission-remote -w $(pwd)
-	[ -d Bl* ] && rm -rf Bl*
+	#[ -d Bl* ] && rm -rf Bl*
 	transmission-remote --start-paused -a "${tl}" &&
 	transmission-remote -t 1 -G all &&
 	echo "transmission-remote -t 1 -g${t}" &&
